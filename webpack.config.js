@@ -8,6 +8,17 @@ module.exports = {
     path: join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  resolve: {
+    modules: ['node_modules', './src']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
   plugins: [new HtmlWebpackPlugin()],
   devtool: 'eval'
 };
